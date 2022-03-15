@@ -1,20 +1,37 @@
-.header{
- height: 72px;
+.header {
+  height: 72px;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 
-.logo{
+.logo {
   width: 100px;
   cursor: pointer;
 }
 
-.search{
+.input_seach {
+  padding: 0.5rem 1rem 0.5rem 1rem;
+  border-radius: 20px;
+  border: none;
+  width: 270px;
+  background: var(--light-grey);
+  font-family: 'Raleway', sans-serif;
+  display: none;
+
+}
+
+.input_seach:focus{
+  box-shadow: 0 0 3px 0 var(--blue);
+  border-color: var(--blue);
+  outline: none;
+}
+
+.search {
   content: url(../../../../assets/images/Vector.svg);
 }
 
-.btn{
+.btn {
   width: 130px;
   height: 40px;
 
@@ -26,6 +43,27 @@
   transition: 1s all;
 }
 
-.btn:hover{
-  background-color: var(--light-blue);
+.btn:hover {
+  background-color: var(--blue);
+  color: var(--white);
+}
+
+
+
+
+/*  AJUSTE DE RESPONSIVIDADE PARA RESOLUÇÃO DE TABLET */
+@media screen and (min-width: 768px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 1rem 0 1rem;
+  }
+
+  .input_seach{
+    display: block;
+  }
+
+  .search {
+    display: none;
+  }
 }

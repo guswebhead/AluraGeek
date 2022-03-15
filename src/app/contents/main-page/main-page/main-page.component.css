@@ -1,9 +1,10 @@
-.content{
+.content {
   background: var(--white);
+  height: 100%;
 }
 
-.banner-promo{
-  background: url(../../../../assets/images/banner.jpg);
+.banner-promo {
+  background: url(../../../../assets/images/hero.svg);
   width: 100%;
   height: 192px;
   background-size: cover;
@@ -18,54 +19,102 @@
   justify-content: flex-end;
 }
 
-.banner-promo p, button{
+.banner-promo p,
+button {
   margin-top: 0.7rem;
 }
 
-.banner-content{
+.banner-content {
   padding: 1rem;
 }
 
-.banner-promo h2{
-  font-size: 22px;
+.banner-promo h2 {
+  font-size: 1.3rem;
 }
 
-.banner-promo p{
-  font-size: 14px;
+.banner-promo p {
+  font-size: 0.8rem;
 }
 
-.products{
+
+
+
+/* ITEMS */
+.products {
   padding: 1rem;
 }
 
-.group-items{
+.group-items {
   margin-bottom: 1.7rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
 
 }
-.group-items h2{
-  color: var(--dark-grey);
-  font-size: 22px;
-}
-.group-items p{
+
+.group-items p {
   color: var(--dark-grey);
   font-weight: bold;
   margin-top: 0.7rem;
 }
-.group-items a{
+
+.group-items__header {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.group-items__header h2{
+  color: var(--dark-grey);
+  font-size: 22px;
+}
+
+.group-items__header a{
   color: var(--blue);
   font-weight: 700;
   font-size: 14px;
-
 }
 
-.item{
+
+.item {
   margin-top: 1rem;
   margin-bottom: 0.7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.item img{
+.item__img {
+  width: 90%;
+}
+
+.item img {
   margin-bottom: 0.7rem;
 }
 
+.item__info {
+  text-align: start;
+  width: 90%;
+}
+
+/*  AJUSTE DE RESPONSIVIDADE PARA RESOLUÇÃO DE TABLET */
+@media screen and (min-width: 768px) {
+  .banner-promo {
+    height: 352px;
+  }
+
+  .banner-promo h2 {
+    font-size: 52px;
+  }
+
+  .banner-promo p {
+    font-size: 22px;
+    font-weight: 700;
+  }
+
+
+
+  .group-items {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
