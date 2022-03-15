@@ -1,0 +1,46 @@
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+
+  width: 100%;
+  background: var(--light-blue);
+}
+
+.logo{
+  width:176px;
+}
+.contact_us{
+
+}
+
+.contact_us p{
+  margin-top: 1rem;
+}
+
+.form{
+  padding: 1rem;
+  margin-top: 1.2rem;
+
+  text-align: start;
+  display: flex;
+  justify-content: flex-start;
+
+  flex-direction: column;
+}
+
+.input_name{
+  height: 56px;
+  border-radius: 4px;
+  margin-top: 1rem;
+
+  border: none;
+}
+
+.text_area{
+  height: 82px;
+  margin-top: 1rem;
+  border: none;
+  margin-bottom: 1rem;
+}

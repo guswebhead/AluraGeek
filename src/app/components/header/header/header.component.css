@@ -1,0 +1,31 @@
+.header{
+ height: 72px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.logo{
+  width: 100px;
+  cursor: pointer;
+}
+
+.search{
+  content: url(../../../../assets/images/Vector.svg);
+}
+
+.btn{
+  width: 130px;
+  height: 40px;
+
+  color: var(--blue);
+  background-color: var(--white);
+  border: 1px solid var(--blue);
+
+  cursor: pointer;
+  transition: 1s all;
+}
+
+.btn:hover{
+  background-color: var(--light-blue);
+}
