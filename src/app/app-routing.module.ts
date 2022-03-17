@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { ProductDetailsComponent } from './contents/product-details/product-details/product-details.component';
 import { LoginComponent } from './contents/login/login/login.component';
 import { AllProductsComponent } from './contents/all-products/all-products/all-products.component';
+import { AddProductComponent } from './contents/add-product/add-product/add-product.component';
 
 const routes: Routes = [
   {
@@ -20,7 +21,13 @@ const routes: Routes = [
   },
   {
     path: 'allProduct',
-    component: AllProductsComponent
+    component: AllProductsComponent,
+    children: [
+      {
+        path: "newProduct",
+        component: AddProductComponent,
+      },
+    ]
   }
 ];
 
