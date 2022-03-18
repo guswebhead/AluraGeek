@@ -68,12 +68,26 @@ a {
 
 .btn-primary{
   width: 130px;
-  height: 40px;
+  min-height: 40px;
   font-weight: 500;
 
   color: var(--white);
   background-color: var(--blue);
   border: none;
+
+  padding: 0.7rem;
+  cursor: pointer;
+  transition: 1s all;
+}
+.btn-secondary{
+  /* width: 130px; */
+  min-height: 51px;
+  padding: 1rem;
+  font-weight: 500;
+
+  color: var(--blue);
+  background-color: var(--light-grey);
+  border: 1px solid var(--blue);
 
   cursor: pointer;
   transition: 1s all;

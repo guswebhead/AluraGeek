@@ -2,28 +2,41 @@
   <section class="content">
 
     <legend>Adicionar novo produto</legend>
-
-    <div class="drag-area">
-      <img class="icon" src="../../../../assets/images/add_icon.svg" alt="img">
-      <header>Adicione uma imagem ao conteudo</header>
-      <input type="file" hidden>
-    </div>
-    <section class="browse">
-      <span>Ou</span>
-      <button class="btn-primary">Procure no seu computador</button>
+    <section class="drag-content">
+      <div class="drag-area" draggable="true">
+        <!-- <img class="icon" id="img"
+          [src]="isTablet ? '../../../../assets/images/img_icon.svg': '../../../../assets/images/add_icon.svg'"
+          alt="img"> -->
+        <div class="icon"></div>
+        <header>Adicione uma imagem ao conteudo</header>
+        <input type="file" hidden [multiple]="false">
+      </div>
+      <section class="browse">
+        <span>Ou</span>
+        <button class="btn-secondary tablet">Procure no seu tablet</button>
+        <button class="btn-secondary pc">Procure no seu computador</button>
+      </section>
     </section>
 
-
-    <form action="">
+    <form class="form">
       <div class="input-container">
-        <input type="text" id="name" required/>
+        <input type="text" id="name" required />
         <label for="name">Nome do produto</label>
       </div>
 
       <div class="input-container">
-        <input type="email" id="email" required/>
+        <input type="email" id="email" required />
         <label for="email">Preço do produto</label>
       </div>
+
+      <div class="input-container">
+        <!-- <text type="text" id="email" required/> -->
+        <textarea name="" id="descrip" cols="30" rows="10"></textarea>
+        <label for="descrip">Descrição do produto</label>
+      </div>
+
+      <button class="btn-primary">Adicionar Produto</button>
+
     </form>
 
 
