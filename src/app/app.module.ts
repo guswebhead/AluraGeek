@@ -10,6 +10,7 @@ import { AllProductsComponent } from './contents/all-products/all-products/all-p
 import { LoginComponent } from './contents/login/login/login.component';
 import { ProductDetailsComponent } from './contents/product-details/product-details/product-details.component';
 import { AddProductComponent } from './contents/add-product/add-product/add-product.component';
+import { DragNdropDirective } from './contents/add-product/drag-ndrop.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { AddProductComponent } from './contents/add-product/add-product/add-prod
     AllProductsComponent,
     LoginComponent,
     ProductDetailsComponent,
-    AddProductComponent
+    AddProductComponent,
+    DragNdropDirective
   ],
   imports: [
     BrowserModule,

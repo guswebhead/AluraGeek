@@ -3,13 +3,13 @@
 
     <legend>Adicionar novo produto</legend>
     <section class="drag-content">
-      <div class="drag-area" draggable="true">
+      <div class="drag-area" appDragNdrop draggable="true" (fileDropped)="onFileDropped($event)">
         <!-- <img class="icon" id="img"
           [src]="isTablet ? '../../../../assets/images/img_icon.svg': '../../../../assets/images/add_icon.svg'"
           alt="img"> -->
         <div class="icon"></div>
         <header>Adicione uma imagem ao conteudo</header>
-        <input type="file" hidden [multiple]="false">
+        <input #fileDropRef  type="file" class="drag" [multiple]="false" (change)="fileBrowseHandler($event.target)">
       </div>
       <section class="browse">
         <span>Ou</span>
@@ -20,18 +20,18 @@
 
     <form class="form">
       <div class="input-container">
-        <input type="text" id="name" required />
+        <input class="form_input" type="text" id="name" required />
         <label for="name">Nome do produto</label>
       </div>
 
       <div class="input-container">
-        <input type="email" id="email" required />
+        <input class="form_input" type="email" id="email" required />
         <label for="email">Preço do produto</label>
       </div>
 
       <div class="input-container">
         <!-- <text type="text" id="email" required/> -->
-        <textarea name="" id="descrip" cols="30" rows="10"></textarea>
+        <textarea  name="" id="descrip" cols="30" rows="10"></textarea>
         <label for="descrip">Descrição do produto</label>
       </div>
 
