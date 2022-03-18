@@ -1,0 +1,116 @@
+.container{
+  padding: 1.5rem;
+  background: var(--light-grey);
+}
+
+.content{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.content legend{
+  font-size: 22px;
+  color: var(--grey);
+  font-weight: 700;
+}
+
+.drag-area{
+  border: 2px dashed var(--thin-grey);
+  width: 100%;
+  height: 140px;
+  margin-top: 1rem;
+  border-radius: 5px;
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.drag-area.active{
+  border: 2px solid #fff;
+}
+.drag-area .icon{
+  width: 18.5px;
+  height: 18.5px;
+}
+.drag-area header{
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--grey);
+}
+.drag-area span{
+  font-size: 25px;
+  font-weight: 500;
+  color: var(--blue);
+  margin: 10px 0 15px 0;
+}
+.drag-area img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.browse{
+  display: none;
+}
+
+
+
+.input-container {
+  background-color: var(--white);
+  position: relative;
+  border-radius: 4px;
+  height: 56px;
+  transition: all 500ms;
+}
+
+/* .input-container:hover {
+  background-color: #ececec;
+} */
+
+/* .input-container:focus-within {
+  background-color: var(--white);
+} */
+
+label {
+  display: block;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 16px;
+  color: rgba(0, 0, 0, 0.5);
+  transform-origin: left top;
+  user-select: none;
+  transition: transform 150ms cubic-bezier(0.4, 0, 0.2, 1),color 150ms cubic-bezier(0.4, 0, 0.2, 1), top 500ms;
+}
+
+input {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  background: transparent;
+  caret-color: var(--accent-color);
+  border: 1px solid transparent;
+  border-bottom-color: rgba(0, 0, 0, 0.42);
+  color: rgba(0, 0, 0, 0.87);
+  transition: border 500ms;
+  padding: 20px 16px 6px;
+  font-size: 1rem;
+}
+
+input:focus {
+  outline: none;
+  border-bottom-width: 2px;
+  border-bottom-color: var(--accent-color);
+}
+
+input:focus + label {
+  color: var(--accent-color);
+}
+
+input:focus + label,
+input.is-valid + label {
+  transform: translateY(-100%) scale(0.75);
+}
