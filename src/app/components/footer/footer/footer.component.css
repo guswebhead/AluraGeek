@@ -67,6 +67,10 @@
   outline: none;
 }
 
+.btn{
+  max-width: 130px;
+}
+
 .credits {
   background: var(--white);
   height: 102px;
@@ -122,7 +126,7 @@
 }
 
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   .contact_us {
     display: flex;
     flex-direction: row;

@@ -84,6 +84,11 @@
   font-size: 14px;
 }
 
+.item__info p {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
+
 .extra_item {
   display: none;
 }
@@ -99,12 +104,12 @@
   }
 
   .group-items {
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
 
   .content{
     display: flex;
@@ -152,7 +157,7 @@
   }
 
   .group-items{
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: repeat(6, 1fr);
   }
 
   .extra_item {
