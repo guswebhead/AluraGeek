@@ -14,12 +14,18 @@
     <!-- STAR WARS -->
     <div class="group-items__header">
       <h2>Star Wars</h2>
-      <a href="#">ver tudo</a>
+
+      <div class="d-flex align-center justify-center">
+        <a href="#" class="see-more">Ver tudo</a>
+        <span class="material-icons arrow">
+          east
+        </span>
+      </div>
     </div>
     <section class="group-items">
 
       <div class="item">
-        <img class="item__img" src="../../../../assets/images/star_wars/star1.svg" alt="caneca star wars">
+        <img [routerLink]="'productDetail'" class="item__img" src="../../../../assets/images/star_wars/star1.svg" alt="caneca star wars">
 
         <div class="item__info">
           <h3>Produto XYZ</h3>
@@ -75,7 +81,12 @@
     <!-- CONSOLES -->
     <div class="group-items__header">
       <h2>Consoles</h2>
-      <a [routerLink]="'productDetail'">ver tudo</a>
+      <div class="d-flex align-center justify-center">
+        <a href="#" class="see-more">Ver tudo</a>
+        <span class="material-icons arrow">
+          east
+        </span>
+      </div>
     </div>
     <section class="group-items">
       <div class="item">
@@ -133,7 +144,12 @@
     <!-- DIVERSOS -->
     <div class="group-items__header">
       <h2>Diversos</h2>
-      <a [routerLink]="'productDetail'">ver tudo</a>
+      <div class="d-flex align-center justify-center">
+        <a href="#" class="see-more">Ver tudo</a>
+        <span class="material-icons arrow">
+          east
+        </span>
+      </div>
     </div>
     <section class="group-items">
 
