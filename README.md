@@ -1,3 +1,34 @@
+# Alura Geek :computer:
+## Repositório criado para participação da 3ª edição do Alura Challenge focado em front end.
+O challenge consiste em realizar 4 desafios divido em 4 semanas.
+
+:calendar: Semana 01 - :white_check_mark:
+Criar a página principal do projeto apenas usando HTML e CSS, e implementando também o design responsivo para celular e tablets.
+
+:calendar: Semana 02 - :red_circle:
+Ainda não disponibilizado
+
+:calendar: Semana 03 - :red_circle:
+Ainda não disponibilizado
+
+:calendar: Semana 04 - :red_circle:
+Ainda não disponibilizado
+
+# O Caminho até agora :chart_with_upwards_trend:
+
+## Semana 01
+A proposta era criar uma página de e-commerce tomando como base o projeto disponibilizado pela Alura no Figma - [Link do Projeto] (https://www.figma.com/file/itJpWbvHxSUcUeMPy1lmof/AluraGeek)
+
+## Projeto feito inteiramente em Angular 13
+
+
+
+
+[Link do Guithub pages do projeto](https://github.com/guswebhead/AluraGeek)
+
+
+
+
 # AluraGeek
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.

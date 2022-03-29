@@ -2,10 +2,17 @@
 
   <form class="form">
     <h2>Iniciar Sessão</h2>
-    <section class="form__fields">
-        <input class="inputs" type="text" placeholder="Escreva seu email">
-        <input class="inputs-password" type="password" placeholder="Escreva sua senha">
-        <button class="btn-primary" type="submit" (click)="loginSubmit()">Entrar</button>
-    </section>
+    <div class="input-container">
+      <input class="form_input" type="email" id="name" required />
+      <label for="name">Escreva seu email</label>
+    </div>
+
+    <div class="input-container">
+      <input class="form_input" type="password" id="password" required />
+      <label for="password">Escreva sua senha</label>
+    </div>
+
+    <button class="btn-primary" type="submit" (click)="loginSubmit()">Entrar</button>
   </form>
+
 </main>

@@ -5,7 +5,7 @@
   align-items: center;
 }
 
-.header__intro{
+.header__intro {
   display: flex;
   justify-content: space-evenly;
   /* width: 75%; */
@@ -16,15 +16,28 @@
   cursor: pointer;
 }
 
-.input_seach {
+.header__intro .input-group {
+  width: 50%;
+  display: none;
+}
+
+.header__intro .input_seach {
   padding: 0.5rem 1rem 0.5rem 1rem;
-  border-radius: 20px;
+  border-radius: 20px 0px 0px 20px;
   border: none;
-  width: 270px;
+  width: 100%;
   background: var(--light-grey);
   font-family: 'Raleway', sans-serif;
   display: none;
+}
 
+.header__intro .input-group .src-btn {
+  border: none;
+  border-radius: 0px 20px 20px 0px;
+  background: var(--light-grey);
+  color: var(--black50);
+  padding-right: 1rem;
+  display: none;
 }
 
 .input_seach:focus {
@@ -32,6 +45,7 @@
   border-color: var(--blue);
   outline: none;
 }
+
 
 .search {
   content: url(../../../../assets/images/Vector.svg);
@@ -65,14 +79,24 @@
     padding: 0 1rem 0 1rem;
   }
 
-  .header__intro{
-  width: 75%;
+  .header__intro {
+    width: 75%;
 
   }
 
-  .input_seach {
+  .header__intro .input-group {
+    display: flex;
+    width: 50%;
+  }
+
+  .header__intro .input_seach {
     display: block;
   }
+
+  .header__intro .input-group .src-btn{
+    display: block;
+  }
+
 
   .search {
     display: none;
@@ -87,8 +111,14 @@
     justify-content: space-evenly;
   }
 
-  .header__intro{
+  .header__intro {
     justify-content: flex-start;
+    align-items: center;
+  }
+
+  .header__intro .input-group {
+    display: flex;
+    width: 50%;
   }
 
   .logo {
@@ -96,7 +126,7 @@
     margin-right: 1.5rem;
   }
 
-  .input_seach{
-    width: 393px;
+  .input_seach {
+    height: 40px;
   }
 }
