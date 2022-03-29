@@ -5,7 +5,7 @@
       <h2>Dezembro promocional</h2>
       <p>Produtos selecionados com 33% de desconto</p>
 
-      <button class="btn-primary">Ver Consoles</button>
+      <button class="btn-primary"><a href="#consoles" class="btn-action">Ver Consoles</a> </button>
     </div>
   </section>
 
@@ -25,7 +25,8 @@
     <section class="group-items">
 
       <div class="item">
-        <img [routerLink]="'productDetail'" class="item__img" src="../../../../assets/images/star_wars/star1.svg" alt="caneca star wars">
+        <img [routerLink]="'productDetail'" class="item__img" src="../../../../assets/images/star_wars/star1.svg"
+          alt="caneca star wars">
 
         <div class="item__info">
           <h3>Produto XYZ</h3>
@@ -79,7 +80,7 @@
     </section>
 
     <!-- CONSOLES -->
-    <div class="group-items__header">
+    <div class="group-items__header" id="consoles">
       <h2>Consoles</h2>
       <div class="d-flex align-center justify-center">
         <a href="#" class="see-more">Ver tudo</a>

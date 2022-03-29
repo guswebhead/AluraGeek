@@ -20,8 +20,12 @@
 }
 
 .banner-promo p,
-button {
+button, a {
   margin-top: 0.7rem;
+}
+
+.banner-promo button{
+  position: relative;
 }
 
 .banner-content {
@@ -34,6 +38,15 @@ button {
 
 .banner-promo p {
   font-size: 0.8rem;
+}
+
+.btn-action{
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 
