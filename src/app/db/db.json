@@ -1,0 +1,50 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "type": "star_wars",
+      "title": "Caneca StormTrooper",
+      "price": 60
+    },
+    {
+      "id": 2,
+      "type": "star_wars",
+      "title": "Head Darth Vader Lego",
+      "price": 120
+    },
+    {
+      "id": 3,
+      "type": "star_wars",
+      "title": "Yoda Action Figure",
+      "price": 100
+    },
+    {
+      "id": 4,
+      "type": "star_wars",
+      "title": "Traje StormTrooper",
+      "price": 500
+    },
+    {
+      "id": 5,
+      "type": "star_wars",
+      "title": "Baby Yoda Toy",
+      "price": 80
+    },
+    {
+      "id": 6,
+      "type": "star_wars",
+      "title": "Action Figure Kylo Ren",
+      "price": 300
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
