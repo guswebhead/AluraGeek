@@ -4,37 +4,133 @@
       "id": 1,
       "type": "star_wars",
       "title": "Caneca StormTrooper",
-      "price": 60
+      "price": 60,
+      "img": "../../../../assets/images/star_wars/star1.svg"
     },
     {
       "id": 2,
       "type": "star_wars",
       "title": "Head Darth Vader Lego",
-      "price": 120
+      "price": 120,
+      "img": "../../../../assets/images/star_wars/star2.svg"
     },
     {
       "id": 3,
       "type": "star_wars",
       "title": "Yoda Action Figure",
-      "price": 100
+      "price": 100,
+      "img": "../../../../assets/images/star_wars/star3.svg"
     },
     {
       "id": 4,
       "type": "star_wars",
       "title": "Traje StormTrooper",
-      "price": 500
+      "price": 500,
+      "img": "../../../../assets/images/star_wars/star4.svg"
     },
     {
       "id": 5,
       "type": "star_wars",
       "title": "Baby Yoda Toy",
-      "price": 80
+      "price": 80,
+      "img": "../../../../assets/images/star_wars/star5.svg"
     },
     {
       "id": 6,
       "type": "star_wars",
       "title": "Action Figure Kylo Ren",
-      "price": 300
+      "price": 300,
+      "img": "../../../../assets/images/star_wars/star6.svg"
+    },
+    {
+      "id": 7,
+      "type": "consoles",
+      "title": "Controle Xbox Series",
+      "price": 300,
+      "img": "../../../../assets/images/consoles/console1.svg"
+    },
+    {
+      "id": 8,
+      "type": "consoles",
+      "title": "Playstation 5",
+      "price": 4999,
+      "img": "../../../../assets/images/consoles/console2.svg"
+
+    },
+    {
+      "id": 9,
+      "type": "consoles",
+      "title": "SNES Classic",
+      "price": 600,
+      "img": "../../../../assets/images/consoles/console3.svg"
+
+    },
+    {
+      "id": 10,
+      "type": "consoles",
+      "title": "Joy-Cons Nintendo Switch",
+      "price": 450,
+      "img": "../../../../assets/images/consoles/console4.svg"
+
+    },
+    {
+      "id": 11,
+      "type": "consoles",
+      "title": "Xbox Series X",
+      "price": 2500,
+      "img": "../../../../assets/images/consoles/console5.svg"
+
+    },
+    {
+      "id": 12,
+      "type": "consoles",
+      "title": "GameBoy Advance",
+      "price": 300,
+      "img": "../../../../assets/images/consoles/console6.svg"
+
+    },
+    {
+      "id": 13,
+      "type": "anothers",
+      "title": "Camiseta Atari",
+      "price": 35,
+      "img": "../../../../assets/images/diversos/diversos1.svg"
+    },
+    {
+      "id": 14,
+      "type": "anothers",
+      "title": "Camiseta Controle SNES",
+      "price": 35,
+      "img": "../../../../assets/images/diversos/diversos2.svg"
+    },
+    {
+      "id": 16,
+      "type": "anothers",
+      "title": "Toy Sonic",
+      "price": 120,
+      "img": "../../../../assets/images/diversos/diversos3.svg"
+    },
+    {
+      "id": 17,
+      "type": "anothers",
+      "title": "Radio Antigo",
+      "price": 200,
+      "img": "../../../../assets/images/diversos/diversos4.svg"
+
+    },
+    {
+      "id": 18,
+      "type": "anothers",
+      "title": "Oculus VR",
+      "price": 2800,
+      "img": "../../../../assets/images/diversos/diversos5.svg"
+    },
+    {
+      "id": 19,
+      "type": "anothers",
+      "title": "Fantasia Pikachu Adulto",
+      "price": 400,
+      "img": "../../../../assets/images/diversos/diversos6.svg"
     }
   ],
   "comments": [
