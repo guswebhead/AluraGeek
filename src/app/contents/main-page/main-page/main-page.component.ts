@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit } from '@angular/core';
+import { take } from 'rxjs';
 
 import { ProductsService } from './../../../services/products/products.service';
 
@@ -41,7 +42,7 @@ export class MainPageComponent implements OnInit {
 
   // Função de requisição dos dados vindo do Service com filtros para especificos itens
   getDataProd() {
-    this.prodService.getProducts().subscribe((data) => {
+    this.prodService.getProducts().pipe(take(1)).subscribe((data) => {
       this.starData = data.filter((x: any) => x.type == "star_wars")
       this.consoleData = data.filter((x: any) => x.type == "consoles")
       this.diversosData = data.filter((x: any) => x.type == "anothers")
@@ -49,7 +50,9 @@ export class MainPageComponent implements OnInit {
   }
 
   // ajuste dos items da grid baseado no primeiro tamanho de tela recebido
-  staticChangeItems(){
+  staticChangeItems() {
+    console.log(this.starData)
+    console.log(this.staticSizePage)
     if (this.staticSizePage < 1024) {
       this.starData = this.starData.slice(0, 4)
       this.consoleData = this.consoleData.slice(0, 4)
