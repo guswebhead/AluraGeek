@@ -1,5 +1,6 @@
+import { Component, HostListener, OnInit } from '@angular/core';
+
 import { ProductsService } from './../../../services/products/products.service';
-import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-main-page',
@@ -8,18 +9,51 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainPageComponent implements OnInit {
 
+
+  // alteração dinamica dos itens da grid
+  @HostListener('window:resize', ['$event'])
+  onResize(event?: any) {
+    this.windowSize = window.innerWidth;
+    if (this.windowSize < 1024) {
+      this.starData = this.starData.slice(0, 4)
+      this.consoleData = this.consoleData.slice(0, 4)
+      this.diversosData = this.diversosData.slice(0, 4)
+    } else {
+      this.getDataProd()
+    }
+  }
+
+  starData: any
+  consoleData: any
+  diversosData: any
+  windowSize: any
+  staticSizePage: any = window.screen.width;
+
   constructor(
     private prodService: ProductsService
   ) { }
 
   ngOnInit(): void {
     this.getDataProd()
+    this.staticChangeItems()
+
   }
 
-
-  getDataProd(){
-    this.prodService.getProducts().subscribe((data)=>{
-      console.log(data)
+  // Função de requisição dos dados vindo do Service com filtros para especificos itens
+  getDataProd() {
+    this.prodService.getProducts().subscribe((data) => {
+      this.starData = data.filter((x: any) => x.type == "star_wars")
+      this.consoleData = data.filter((x: any) => x.type == "consoles")
+      this.diversosData = data.filter((x: any) => x.type == "anothers")
     })
+  }
+
+  // ajuste dos items da grid baseado no primeiro tamanho de tela recebido
+  staticChangeItems(){
+    if (this.staticSizePage < 1024) {
+      this.starData = this.starData.slice(0, 4)
+      this.consoleData = this.consoleData.slice(0, 4)
+      this.diversosData = this.diversosData.slice(0, 4)
+    }
   }
 }
