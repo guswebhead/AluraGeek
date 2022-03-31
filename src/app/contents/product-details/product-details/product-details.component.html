@@ -3,13 +3,13 @@
   <section class="box">
 
     <!-- CONTEUDO DE DETALHE DO PRODUTO SELECIONADO -->
-    <section class="info-products">
+    <section class="info-products" *ngIf="productData">
       <div class="info-foto">
-        <img class="img-prod" src="../../../../assets/images/info_product.svg" alt="caneca star wars">
+        <img class="img-prod" [src]="productData.img" alt="caneca star wars">
       </div>
       <div class="details">
-        <h2>Produto XYZ</h2>
-        <h3>R$ 60,00</h3>
+        <h2>{{productData.title}}</h2>
+        <h3>{{productData.price | currency:'BRL'}}</h3>
         <p>Voluptas voluptatum quibusdam similique, class debitis alias maecenas eveniet ridiculus, facilis fusce! Ullam
           conubia? Sociis, minima malesuada habitasse distinctio sequi aliqua malesuada. Quisque deleniti proin
           expedita,
@@ -19,64 +19,20 @@
     </section>
 
     <!-- CONTEUDOS SIMILARES -->
-    <section class="another-products">
+    <section class="another-products" *ngIf="similarProd">
 
       <h2>Produtos Similares</h2>
-      <section class="group-items">
-        <div class="item">
-          <img class="item__img" src="../../../../assets/images/consoles/console1.svg" alt="caneca star wars">
+      <section class="group-items" >
+        <div class="item" *ngFor="let item of similarProd">
+          <img class="item__img" (click)="goToItem(item.id)"  [src]="item.img" alt="caneca star wars">
 
           <div class="item__info">
-            <h3>Produto XYZ</h3>
-            <p>R$ 60,00</p>
-            <a [routerLink]="'productDetail'">ver produto</a>
-          </div>
-        </div>
-        <div class="item">
-          <img class="item__img" src="../../../../assets/images/star_wars/star2.svg" alt="caneca star wars">
-
-          <div class="item__info">
-            <h3>Produto XYZ</h3>
-            <p>R$ 60,00</p>
-            <a [routerLink]="'productDetail'">ver produto</a>
-          </div>
-        </div>
-        <div class="item">
-          <img class="item__img" src="../../../../assets/images/star_wars/star3.svg" alt="caneca star wars">
-
-          <div class="item__info">
-            <h3>Produto XYZ</h3>
-            <p>R$ 60,00</p>
-            <a [routerLink]="'productDetail'">ver produto</a>
-          </div>
-        </div>
-        <div class="item">
-          <img class="item__img" src="../../../../assets/images/star_wars/star4.svg" alt="caneca star wars">
-
-          <div class="item__info">
-            <h3>Produto XYZ</h3>
-            <p>R$ 60,00</p>
-            <a [routerLink]="'productDetail'">ver produto</a>
+            <h3>{{item.title}}</h3>
+            <p>{{item.price | currency:'BRL'}}</p>
+            <a (click)="goToItem(item.id)">ver produto</a>
           </div>
         </div>
 
-        <div class="extra_item">
-          <img class="item__img" src="../../../../assets/images/star_wars/star5.svg" alt="stormtropper">
-          <div class="item__info">
-            <h3>Produto XYZ</h3>
-            <p>R$ 60,00</p>
-            <a [routerLink]="'productDetail'">ver produto</a>
-          </div>
-        </div>
-
-        <div class="extra_item">
-          <img class="item__img" src="../../../../assets/images/star_wars/star6.svg" alt="stormtropper">
-          <div class="item__info">
-            <h3>Produto XYZ</h3>
-            <p>R$ 60,00</p>
-            <a [routerLink]="'productDetail'">ver produto</a>
-          </div>
-        </div>
       </section>
 
     </section>
