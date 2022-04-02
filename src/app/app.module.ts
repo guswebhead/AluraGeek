@@ -1,3 +1,5 @@
+import { ReactiveFormsModule } from '@angular/forms';
+import { SharedModule } from './shared/shared.module';
 import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -12,6 +14,7 @@ import { AllProductsComponent } from './contents/all-products/all-products/all-p
 import { LoginComponent } from './contents/login/login/login.component';
 import { MainPageComponent } from './contents/main-page/main-page/main-page.component';
 import { ProductDetailsComponent } from './contents/product-details/product-details/product-details.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -28,7 +31,10 @@ import { ProductDetailsComponent } from './contents/product-details/product-deta
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    SharedModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
