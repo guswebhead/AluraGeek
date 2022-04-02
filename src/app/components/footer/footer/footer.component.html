@@ -15,11 +15,12 @@
       </div>
     </div>
 
-    <form class="form">
+    <form class="form" [formGroup]="contactForm"  (submit)="sendMessage()">
       <h3>Fale conosco</h3>
-      <input class="input_name" type="text" id="nome" placeholder="Nome">
-      <textarea class="text_area" id="mensagem" placeholder="escreva sua mensagem aqui"></textarea>
-      <button class="btn-primary btn">Enviar Mensagem</button>
+      <input class="input_name" type="text" id="nome" placeholder="Nome" formControlName="name">
+      <textarea class="text_area" id="mensagem" placeholder="escreva sua mensagem aqui"
+        formControlName="message"></textarea>
+      <button class="btn-primary btn" type="submit">Enviar Mensagem</button>
     </form>
 
   </section>
