@@ -145,14 +145,25 @@
       "description": "Produto oficialmente licenciado. O produto inclui: macacão com capuz. Pokemon"
     }
   ],
-  "comments": [
+  "contactUs": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name": "",
+      "message": ""
+    },
+    {
+      "name": "Gustavo",
+      "message": "pfv me contratem",
+      "id": 2
+    },
+    {
+      "name": "Gustavo",
+      "message": "pfv me contratem",
+      "id": 3
     }
   ],
-  "profile": {
-    "name": "typicode"
+  "users": {
+    "email": "gustavo.caixeta@gmail.com",
+    "password": "123"
   }
 }

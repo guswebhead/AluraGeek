@@ -1,3 +1,5 @@
+import { AuthAdmService } from './../../../services/login/auth-adm.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -8,8 +10,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
+  loginForm = new FormGroup({
+    email: new FormControl('', [Validators.required, Validators.email]),
+    password: new FormControl('', Validators.required),
+  })
+
   constructor(
-    private router: Router
+    private router: Router,
+    private authService: AuthAdmService
   ) { }
 
   ngOnInit(): void {
@@ -17,7 +25,10 @@ export class LoginComponent implements OnInit {
   }
 
   loginSubmit() {
-    this.router.navigate(['allProduct'])
+    if(this.loginForm.valid)
+    this.authService.loginAdm(this.loginForm.value).subscribe((res)=>{
+      this.router.navigate(['allProduct'])
+    })
   }
 
   // função para corrigir o label do css input estilo material que quebra no outfocus

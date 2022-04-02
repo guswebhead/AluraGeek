@@ -1,18 +1,18 @@
 <main class="container">
 
-  <form class="form">
+  <form class="form" [formGroup]="loginForm"  (submit)="loginSubmit()">
     <h2>Iniciar Sessão</h2>
     <div class="input-container">
-      <input class="form_input" type="email" id="name" required />
+      <input class="form_input" type="email" id="name" formControlName="email"  required />
       <label for="name">Escreva seu email</label>
     </div>
 
     <div class="input-container">
-      <input class="form_input" type="password" id="password" required />
+      <input class="form_input" type="password" id="password" formControlName="password" required />
       <label for="password">Escreva sua senha</label>
     </div>
 
-    <button class="btn-primary" type="submit" (click)="loginSubmit()">Entrar</button>
+    <button class="btn-primary" type="submit">Entrar</button>
   </form>
 
 </main>
