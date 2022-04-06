@@ -143,6 +143,22 @@
       "price": 400,
       "img": "../../../../assets/images/diversos/diversos6.svg",
       "description": "Produto oficialmente licenciado. O produto inclui: macacão com capuz. Pokemon"
+    },
+    {
+      "title": "Teste",
+      "price": "500",
+      "type": "anothers",
+      "description": "asdjasidauisbduiasuidasd",
+      "img": "https://pbs.twimg.com/profile_images/1064295067169554433/cyMK4n6G_400x400.jpg",
+      "id": 20
+    },
+    {
+      "title": "novo",
+      "price": "6465",
+      "type": "anothers",
+      "description": "asjkdakjsdhkajshdjkahsd",
+      "img": "https://pbs.twimg.com/profile_images/1064295067169554433/cyMK4n6G_400x400.jpg",
+      "id": 21
     }
   ],
   "contactUs": [
@@ -164,6 +180,6 @@
   ],
   "users": {
     "email": "gustavo.caixeta@gmail.com",
-    "password": "123"
+    "password": "1234"
   }
 }

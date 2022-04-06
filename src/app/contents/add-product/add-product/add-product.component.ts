@@ -1,3 +1,6 @@
+import { Router } from '@angular/router';
+import { ProductsService } from './../../../services/products/products.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AfterViewInit, Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
@@ -9,19 +12,58 @@ export class AddProductComponent implements OnInit, AfterViewInit {
 
   isTablet: Boolean = false;
   files: any[] = [];
+  file!: File
+
+  newProd!: FormGroup
 
 
-  constructor() { }
+  constructor(
+    private prodService: ProductsService,
+    private route: Router
+  ) { }
 
   ngOnInit(): void {
     this.adjustLabelsInput()
 
     const media = window.matchMedia("(min-width: 1440px)")
+    this.createFormProd()
 
   }
 
   ngAfterViewInit(): void {
 
+  }
+
+  createFormProd() {
+    this.newProd = new FormGroup({
+      name: new FormControl('', Validators.required),
+      price: new FormControl('', Validators.required),
+      descript: new FormControl('', Validators.required),
+      image: new FormControl('', Validators.required)
+    })
+  }
+
+  addProd() {
+    const name = this.newProd.get('name')?.value ?? '';
+    const price = this.newProd.get('price')?.value ?? '';
+    const descript = this.newProd.get('descript')?.value ?? '';
+    const image = this.newProd.get('image')?.value ?? '';
+
+    if (this.newProd.valid)
+      this.prodService.addProd(name, price, descript, this.files[0]).subscribe((data) => {
+        alert('conteudo adicionado!')
+        this.route.navigate([''])
+      },
+        (error) => {
+          alert(error)
+        }
+      )
+      else {
+        alert('dados invalidos')
+      }
+    // const reader = new FileReader();
+    // reader.readAsDataURL(this.files[0]);
+    // console.log(this.files[0])
   }
 
   // função para corrigir o label do css input estilo material que quebra no outfocus
@@ -49,20 +91,33 @@ export class AddProductComponent implements OnInit, AfterViewInit {
     });
   }
 
+  holdArchive(archive: any): void {
+    const [file] = archive?.files;
+    this.file = file;
+    const reader = new FileReader();
+    // reader.onload = (event: any) => (this.preview = event.target.result)
+    reader.readAsDataURL(file);
+  }
+
 
 
   /**
    * on file drop handler
    */
   onFileDropped($event: any) {
-    this.prepareFilesList($event);
+    this.files.push($event[0]);
   }
 
   /**
    * handle file from browsing
    */
   fileBrowseHandler(files: any) {
-    this.prepareFilesList(files.files);
+    const [file] = files.files;
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    console.log(files)
+    this.files.push(files.files[0]);
+
   }
 
   /**
@@ -94,23 +149,11 @@ export class AddProductComponent implements OnInit, AfterViewInit {
   }
 
   /**
-   * Convert Files list to normal array list
-   * @param files (Files List)
-   */
-  prepareFilesList(files: Array<any>) {
-    for (const item of files) {
-      item.progress = 0;
-      this.files.push(item);
-    }
-    this.uploadFilesSimulator(0);
-  }
-
-  /**
    * format bytes
    * @param bytes (File size in bytes)
    * @param decimals (Decimals point)
    */
-  formatBytes(bytes:any, decimals:any) {
+  formatBytes(bytes: any, decimals: any) {
     if (bytes === 0) {
       return '0 Bytes';
     }
