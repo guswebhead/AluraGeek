@@ -1,3 +1,5 @@
+import { Router } from '@angular/router';
+import { ProductsService } from './../../../services/products/products.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AllProductsComponent implements OnInit {
 
-  constructor() { }
+  prodData:any
+
+  constructor(
+    private prodService: ProductsService,
+    private route: Router
+  ) { }
 
   ngOnInit(): void {
+    this.getAllProducts()
+  }
+
+  getAllProducts() {
+    this.prodService.getProducts().subscribe((data: any) => {
+      this.prodData = data
+    })
+  }
+
+  goToProduct(id:number){
+    this.route.navigate(['productDetail/'+id])
   }
 
 }
