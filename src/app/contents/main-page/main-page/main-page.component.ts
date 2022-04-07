@@ -11,7 +11,7 @@ import { ProductsService } from './../../../services/products/products.service';
 export class MainPageComponent implements OnInit {
 
 
-  // alteração dinamica dos itens da grid
+  // alteração dinamica dos itens da grid para resoluções abaixo de 1024
   @HostListener('window:resize', ['$event'])
   onResize(event?: any) {
     this.windowSize = window.innerWidth;
@@ -36,7 +36,6 @@ export class MainPageComponent implements OnInit {
 
   ngOnInit(): void {
     this.getDataProd()
-    this.staticChangeItems()
 
   }
 
@@ -46,13 +45,18 @@ export class MainPageComponent implements OnInit {
       this.starData = data.filter((x: any) => x.type == "star_wars")
       this.consoleData = data.filter((x: any) => x.type == "consoles")
       this.diversosData = data.filter((x: any) => x.type == "anothers")
+
+
+      this.starData = this.starData.slice(0, 6)
+      this.consoleData = this.consoleData.slice(0, 6)
+      this.diversosData = this.diversosData.slice(0, 6)
+
+      this.staticChangeItems()
     })
   }
 
-  // ajuste dos items da grid baseado no primeiro tamanho de tela recebido
+  // ajuste dos items da grid baseado no primeiro tamanho de tela recebido para resoluções abaixo de 1024
   staticChangeItems() {
-    console.log(this.starData)
-    console.log(this.staticSizePage)
     if (this.staticSizePage < 1024) {
       this.starData = this.starData.slice(0, 4)
       this.consoleData = this.consoleData.slice(0, 4)
