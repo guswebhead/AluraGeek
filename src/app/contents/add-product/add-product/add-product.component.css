@@ -159,9 +159,39 @@ textarea.is-valid+label {
   transform: translateY(-100%) scale(0.75);
 }
 
-.browse button:hover {
+.input-browser {
+  position: relative;
+  display: flex;
+  margin: 1rem;
+  border: 1px solid var(--blue);
+  padding: 1rem;
+  color: var(--blue);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+
+  transition: 1s all;
+}
+
+.input-browser input {
+  opacity: 0;
+  position: absolute;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+}
+
+.browse input-browser:hover {
   background-color: var(--blue);
   color: var(--white);
+}
+
+.img-thumbnail {
+  width: 100%;
+  margin: 1rem;
 }
 
 
@@ -185,6 +215,8 @@ textarea.is-valid+label {
     height: 32px;
 
   }
+
+
 
   .browse {
     display: flex;
@@ -264,7 +296,7 @@ textarea.is-valid+label {
   }
 
   .pc {
-    display: inline;
+    display: flex;
 
   }
 

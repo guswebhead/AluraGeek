@@ -2,27 +2,41 @@
   <section class="content">
 
     <form class="form" [formGroup]="newProd" (submit)="addProd()">
-    <legend>Adicionar novo produto</legend>
-    <section class="drag-content">
-      <div class="drag-area" appDragNdrop draggable="true" (fileDropped)="onFileDropped($event)">
-        <!-- <img class="icon" id="img"
-          [src]="isTablet ? '../../../../assets/images/img_icon.svg': '../../../../assets/images/add_icon.svg'"
-          alt="img"> -->
+      <legend>Adicionar novo produto</legend>
+      <section class="drag-content">
+        <div class="drag-area" appDragNdrop draggable="true" (fileDropped)="onFileDropped($event)"
+          *ngIf="!preview; else previewImage">
           <div class="icon"></div>
           <header>Adicione uma imagem ao conteudo</header>
-          <input #fileDropRef type="file" formControlName="image" class="drag" [multiple]="false" (change)="fileBrowseHandler($event.target)">
+          <input #fileDropRef id="fileDropRef" type="file" formControlName="image" class="drag" accept="image/*"
+            [multiple]="false" (change)="fileBrowseHandler($event.target)">
         </div>
+
+        <ng-template #previewImage>
+          <img [src]="preview" [alt]="''" class="img-thumbnail">
+        </ng-template>
+
         <section class="browse">
           <span>Ou</span>
-          <button class="btn-secondary tablet">Procure no seu tablet</button>
-          <button class="btn-secondary pc">Procure no seu computador</button>
+          <div class="input-browser tablet">
+            <span>Procure no seu
+              tablet</span>
+            <input type="file" accept="image/*" [multiple]="false" (change)="fileBrowseHandler($event.target)">
+
+          </div>
+          <div class="input-browser pc">
+            <span>Procure no seu
+              computador</span>
+            <input type="file" accept="image/*" [multiple]="false" (change)="fileBrowseHandler($event.target)">
+          </div>
         </section>
 
-        <div class="files-list">
+        <!-- <div class="files-list">
           <div class="single-file" *ngFor="let file of files; let i = index">
             <div class="file-icon" style="width: 50px">
-              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                x="0px" y="0px" viewBox="0 0 58 58" style="enable-background:new 0 0 58 58;" xml:space="preserve">
+              <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 58 58"
+                style="enable-background:new 0 0 58 58;" xml:space="preserve">
                 <polygon style="fill:#EDEADA;" points="51.5,14 37.5,0 6.5,0 6.5,58 51.5,58 " />
                 <g>
                   <path style="fill:#CEC9AE;"
@@ -44,7 +58,6 @@
                 {{ file?.name }}
               </h4>
               <p class="size">
-                <!-- {{ this.formatBytes(file?.size) }} -->
               </p>
 
             </div>
@@ -56,7 +69,7 @@
               </svg>
             </div>
           </div>
-        </div>
+        </div> -->
       </section>
 
       <div class="input-container">
@@ -65,7 +78,7 @@
       </div>
 
       <div class="input-container">
-        <input class="form_input" type="text" id="price" formControlName="price" value="" required/>
+        <input class="form_input" type="text" id="price" formControlName="price" value="" required />
         <label for="price">Preço do produto</label>
       </div>
 

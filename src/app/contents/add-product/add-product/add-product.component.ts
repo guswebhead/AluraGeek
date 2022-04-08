@@ -1,7 +1,8 @@
+import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+
 import { ProductsService } from './../../../services/products/products.service';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { AfterViewInit, Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-add-product',
@@ -10,9 +11,14 @@ import { AfterViewInit, Component, OnChanges, OnInit, SimpleChanges } from '@ang
 })
 export class AddProductComponent implements OnInit, AfterViewInit {
 
-  isTablet: Boolean = false;
+  isTablet: boolean = false;
   files: any[] = [];
   file!: File
+
+  url!: string
+
+
+  preview!: any;
 
   newProd!: FormGroup
 
@@ -24,6 +30,7 @@ export class AddProductComponent implements OnInit, AfterViewInit {
 
   ngOnInit(): void {
     this.adjustLabelsInput()
+    console.log(this.preview)
 
     const media = window.matchMedia("(min-width: 1440px)")
     this.createFormProd()
@@ -50,7 +57,7 @@ export class AddProductComponent implements OnInit, AfterViewInit {
     const image = this.newProd.get('image')?.value ?? '';
 
     if (this.newProd.valid)
-      this.prodService.addProd(name, price, descript, this.files[0]).subscribe((data) => {
+      this.prodService.addProd(name, price, descript, this.preview).subscribe((data) => {
         alert('conteudo adicionado!')
         this.route.navigate([''])
       },
@@ -58,9 +65,9 @@ export class AddProductComponent implements OnInit, AfterViewInit {
           alert(error)
         }
       )
-      else {
-        alert('dados invalidos')
-      }
+    else {
+      alert('dados invalidos')
+    }
     // const reader = new FileReader();
     // reader.readAsDataURL(this.files[0]);
     // console.log(this.files[0])
@@ -105,18 +112,30 @@ export class AddProductComponent implements OnInit, AfterViewInit {
    * on file drop handler
    */
   onFileDropped($event: any) {
-    this.files.push($event[0]);
+    console.log($event)
+    // const [file] = $event?.files;
+    // this.file = file;
+    // const reader = new FileReader();
+    // reader.onload = (event: any) => (this.preview = event.target.result)
+    // reader.readAsDataURL(file);
+
+    // console.log(this.preview)
   }
 
   /**
    * handle file from browsing
    */
   fileBrowseHandler(files: any) {
-    const [file] = files.files;
-    const reader = new FileReader();
-    reader.readAsDataURL(file);
     console.log(files)
-    this.files.push(files.files[0]);
+    const [file] = files?.files;
+    this.file = file;
+    const reader = new FileReader();
+    reader.onload = (event: any) => {
+      this.preview = event.target.result
+      console.log(this.preview)
+    }
+    reader.readAsDataURL(file);
+
 
   }
 
