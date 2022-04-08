@@ -20,4 +20,7 @@
 
 html{
   scroll-behavior: smooth;
+
+  scrollbar-width: thin;
+  scrollbar-color: var(--blue) var(--light-grey);
 }
