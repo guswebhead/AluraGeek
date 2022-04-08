@@ -1,8 +1,10 @@
-import { MatSnackBarModule } from '@angular/material/snack-bar';
+import 'animate.css';
+
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import 'animate.css';
+import { MatInputModule } from '@angular/material/input';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 
@@ -14,11 +16,14 @@ import 'animate.css';
   imports: [
     CommonModule,
     MatSnackBarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    MatInputModule
   ],
   exports: [
     ReactiveFormsModule,
     MatSnackBarModule,
+    MatInputModule,
   ]
 })
 export class SharedModule { }
