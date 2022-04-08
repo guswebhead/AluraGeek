@@ -12,4 +12,10 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  reload(){
+    const banner = document.getElementById('banner')
+    if(banner && banner.style.display === 'none'){
+        location.reload()
+    }
+  }
 }

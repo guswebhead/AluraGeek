@@ -63,4 +63,33 @@ export class MainPageComponent implements OnInit {
       this.diversosData = this.diversosData.slice(0, 4)
     }
   }
+
+  seeAll(category: string) {
+    console.log(category)
+    const banner = document.getElementById('banner');
+    const title = document.getElementById('title-h2');
+    const arrowSee = document.getElementById('see')
+
+    // outros blocos de componentes
+
+    const consoles = document.getElementById('consoles')
+    const diversos = document.getElementById('anothers')
+
+    if (banner && title && arrowSee && consoles && diversos) {
+      banner.style.display = 'none'
+      title.textContent = 'Todos os produtos'
+      arrowSee.style.display = 'none'
+      consoles.style.display = 'none'
+      diversos.style.display = 'none'
+
+      this.prodService.getProducts().pipe(take(1)).subscribe((data) => {
+        this.starData = data
+        this.consoleData = []
+        this.diversosData = []
+        document.documentElement.scrollTop = 0;
+      })
+    }
+
+
+  }
 }

@@ -1,7 +1,7 @@
 <header class="header">
 
   <div class="header__intro">
-    <img [routerLink]="''" class="logo" src="../../../../assets/images/Logo.svg" alt="logo alura geek">
+    <img [routerLink]="''" (click)="reload()"  class="logo" src="../../../../assets/images/Logo.svg" alt="logo alura geek">
 
     <div class="input-group">
       <input class="input_seach" type="search" placeholder="O que deseja encontrar?">

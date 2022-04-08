@@ -1,6 +1,6 @@
 <main class="content">
 
-  <section class="banner-promo">
+  <section class="banner-promo" id="banner">
     <div class="banner-content">
       <h2>Dezembro promocional</h2>
       <p>Produtos selecionados com 33% de desconto</p>
@@ -12,18 +12,18 @@
   <section class="products" *ngIf="starData || consoleData || diversosData">
 
     <!-- STAR WARS -->
-    <div class="group-items__header">
-      <h2>Star Wars</h2>
+    <div class="group-items__header" id="star-wars">
+      <h2 id="title-h2">Star Wars</h2>
 
-      <div class="d-flex align-center justify-center">
-        <a href="#" class="see-more">Ver tudo</a>
+      <div class="d-flex align-center justify-center" id="see">
+        <a (click)="seeAll('star_wars')" class="see-more">Ver tudo</a>
         <span class="material-icons arrow">
           east
         </span>
       </div>
     </div>
-    <section class="group-items">
 
+    <section class="group-items">
       <div class="item" *ngFor="let item of starData">
         <img [routerLink]="'productDetail/'+item.id" class="item__img" [src]="item.img" alt="caneca star wars">
 
@@ -34,14 +34,13 @@
         </div>
 
       </div>
-
     </section>
 
     <!-- CONSOLES -->
     <div class="group-items__header" id="consoles">
       <h2>Consoles</h2>
       <div class="d-flex align-center justify-center">
-        <a href="#" class="see-more">Ver tudo</a>
+        <a (click)="seeAll('consoles')" class="see-more">Ver tudo</a>
         <span class="material-icons arrow">
           east
         </span>
@@ -60,10 +59,10 @@
     </section>
 
     <!-- DIVERSOS -->
-    <div class="group-items__header">
+    <div class="group-items__header" id="anothers">
       <h2>Diversos</h2>
       <div class="d-flex align-center justify-center">
-        <a href="#" class="see-more">Ver tudo</a>
+        <a (click)="seeAll('anothers')" class="see-more">Ver tudo</a>
         <span class="material-icons arrow">
           east
         </span>
