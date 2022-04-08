@@ -1,3 +1,4 @@
+import Swal from 'sweetalert2';
 import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -58,8 +59,15 @@ export class AddProductComponent implements OnInit, AfterViewInit {
 
     if (this.newProd.valid)
       this.prodService.addProd(name, price, descript, this.preview).subscribe((data) => {
-        alert('conteudo adicionado!')
-        this.route.navigate([''])
+
+        Swal.fire(
+          'Boa!',
+          'Novo Conteudo Adicionado!',
+          'success'
+        ).then(() => {
+          this.route.navigate([''])
+        })
+
       },
         (error) => {
           alert(error)
