@@ -15,11 +15,18 @@
       </div>
     </div>
 
-    <form class="form" [formGroup]="contactForm"  (submit)="sendMessage()">
+    <form class="form" [formGroup]="contactForm" (submit)="sendMessage()">
       <h3>Fale conosco</h3>
-      <input class="input_name" type="text" id="nome" placeholder="Nome" formControlName="name">
-      <textarea class="text_area" id="mensagem" placeholder="escreva sua mensagem aqui"
-        formControlName="message"></textarea>
+
+      <mat-form-field  appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input matInput placeholder="Nome" formControlName="name">
+      </mat-form-field>
+
+      <mat-form-field  appearance="fill">
+        <mat-label>Mensagem</mat-label>
+        <textarea matInput placeholder="escreva sua mensagem aqui" formControlName="message"></textarea>
+      </mat-form-field>
       <button class="btn-primary btn" type="submit">Enviar Mensagem</button>
     </form>
 
