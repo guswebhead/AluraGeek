@@ -9,6 +9,12 @@ O challenge consiste em realizar 4 desafios divido em 4 semanas.
 
 ## Projeto feito inteiramente em Angular 13
 
+basta inicializar o angular cli com o comando: ng serve (em seu terminal de preferencia), ele irá rodar automaticamente na porta "localhost:4200".
+
+para inicializar o servidor fake backend, inicialize seu terminal no diretorio 'db' alocado dentro do projeto e rode o comando: json-server --watch db.json 
+(automaticamente ele rodará na porta 'http:/localhost:3000'
+
+
 [Link do Guithub pages do projeto](https://github.com/guswebhead/AluraGeek)
 
 # AluraGeek
