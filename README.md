@@ -1,4 +1,7 @@
 # Alura Geek :computer:
+
+![alt text](src/assets/projeto_alura_geek.png)
+
 ## Repositório criado para participação da 3ª edição do Alura Challenge focado em front end.
 O challenge consiste em realizar 4 desafios divido em 4 semanas.
 
@@ -6,11 +9,7 @@ O challenge consiste em realizar 4 desafios divido em 4 semanas.
 
 ## Projeto feito inteiramente em Angular 13
 
-
 [Link do Guithub pages do projeto](https://github.com/guswebhead/AluraGeek)
-
-
-
 
 # AluraGeek
 
